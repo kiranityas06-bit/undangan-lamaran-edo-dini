@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Lamaran | Edo & Dini</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fafafa;
+      color: #2f2f2f;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    header {
+      background: linear-gradient(135deg, #fff, #f2f2f2);
+      color: #2f2f2f;
+      padding: 100px 20px 80px;
+      border-bottom: 2px solid #d4b47f;
+      position: relative;
+      overflow: visible;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #a78b60;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .section {
+      padding: 70px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+      position: relative;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #a78b60;
+      margin-bottom: 20px;
+    }
+    .date {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #2f2f2f;
+    }
+    .location {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+    .btn {
+      background: #a78b60;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #8c734e;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 25px;
+    }
+    input, select, textarea {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      font-family: inherit;
+      background-color: #fff;
+    }
+    button {
+      background: #a78b60;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    button:hover {
+      background: #8c734e;
+    }
+    footer {
+      background: #f4f4f4;
+      color: #777;
+      padding: 20px;
+      font-size: 0.9rem;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    /* Petal animation */
+    .petal {
+      position: absolute;
+      top: -10px;
+      background: rgba(255, 182, 193, 0.75);
+      border-radius: 150% 0 150% 0;
+      width: 14px;
+      height: 14px;
+      opacity: 0.85;
+      animation: fall linear infinite;
+      pointer-events: none;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0.45; }
+    }
+
+    /* Glowing initials */
+    .initials {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: #d4b47f;
+      text-shadow: 0 0 10px rgba(212, 180, 127, 0.6);
+      margin-bottom: 8px;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 8px rgba(212,180,127,0.35); }
+      to { text-shadow: 0 0 20px rgba(212,180,127,0.9); }
+    }
+
+    /* Modern leaf ornament (SVG wrapper) */
+    .ornament {
+      position: absolute;
+      width: 160px;
+      height: 120px;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+    .orn-top { top: 10px; right: 10px; transform: rotate(0deg); }
+    .orn-bottom { bottom: 10px; left: 10px; transform: rotate(180deg); }
+
+    /* Closing card */
+    .closing {
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+      border-radius: 12px;
+      padding: 40px 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    }
+    .closing p { font-size: 1.05rem; color: #444; margin: 12px 0; }
+
+    /* Responsive tweaks */
+    @media (max-width:480px) {
+      .initials { font-size: 3rem; }
+      header { padding: 60px 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- === Opening Section with Petals, Initials & Top Ornament === -->
+  <div id="opening" style="
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, #fff8f0, #f6f3ed);
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    z-index: 9999; text-align: center; transition: opacity 1s ease; overflow: hidden;">
+
+    <!-- top-right leaf ornament -->
+    <svg class="ornament orn-top" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="#d4b47f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 100 C60 30, 140 30, 180 100" opacity="0.95"/>
+        <path d="M40 90 C60 70, 80 70, 100 90" opacity="0.9"/>
+        <path d="M120 80 C140 60, 160 60, 170 80" opacity="0.9"/>
+      </g>
+    </svg>
+
+    <div class='initials' aria-hidden="true">E ♥ D</div>
+    <h1 style="font-family: 'Playfair Display', serif; color: #a78b60; font-size: 2.5rem; margin-bottom: 6px;">
+      Edo & Dini
+    </h1>
+    <p style="font-size: 1rem; color: #555; margin-bottom: 34px; max-width: 84%;">
+      We joyfully invite you to our engagement celebration
+    </p>
+    <button id="openBtn" style="
+      background: #a78b60; color: #fff; border: none;
+      padding: 12px 30px; border-radius: 30px;
+      font-size: 1rem; cursor: pointer; transition: 0.3s;">
+      Open Invitation
+    </button>
+  </div>
+
+  <audio id="bgmusic" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+  </audio>
+
+  <header>
+    <h1>Muhammad Edo & Dini Aulia</h1>
+    <p>Dengan penuh rasa syukur, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara lamaran kami yang penuh kebahagiaan.</p>
+  </header>
+
+  <section class="section">
+    <h2>💍 Acara Lamaran</h2>
+    <p class="date">Minggu, 28 Desember 2025</p>
+    <p class="location">Primavera Residence Blok K5/29, Bojong, Klapanunggal</p>
+    <a class="btn" href="https://www.google.com/maps/place/Primavera+Residence,+Bojong,+Klapanunggal" target="_blank">📍 Lihat Lokasi</a>
+  </section>
+
+  <section class="section">
+    <h2>🌷 Kata Sambutan</h2>
+    <p>Dengan memohon rahmat dan ridho Allah SWT, kami mempertemukan dua keluarga besar dalam ikatan silaturahmi yang penuh makna. Semoga acara lamaran ini menjadi langkah awal menuju kehidupan baru yang dipenuhi cinta dan keberkahan.</p>
+    <p>Kami berharap momen ini menjadi kenangan indah bagi keluarga, sahabat, dan semua yang turut menyaksikan. Doa dan restu dari Bapak/Ibu/Saudara/i sangat berarti bagi kami untuk melangkah ke tahap berikutnya dalam kisah perjalanan kami.</p>
+    <p>Dengan segala hormat, kami ucapkan terima kasih atas doa, cinta, dan dukungan yang diberikan. Semoga Allah SWT senantiasa memberikan kebahagiaan dan kedamaian kepada kita semua.</p>
+  </section>
+
+  <section class="section">
+    <h2>🕰️ Hitung Mundur Menuju Hari Bahagia</h2>
+    <h3 id="countdown" style="font-size: 1.3rem; margin-top: 10px; color: #555;"></h3>
+  </section>
+
+  <section class="section">
+    <h2>💌 Konfirmasi Kehadiran</h2>
+    <p>Mohon kesediaan Bapak/Ibu/Saudara/i untuk mengonfirmasi kehadiran di bawah ini.</p>
+    <form action="https://formspree.io/f/mgegroqo" method="POST">
+      <input type="text" name="nama" placeholder="Nama lengkap" required />
+      <select name="kehadiran" required>
+        <option value="">Konfirmasi kehadiran</option>
+        <option value="Hadir">Hadir</option>
+        <option value="Tidak Hadir">Tidak Hadir</option>
+      </select>
+      <textarea name="pesan" rows="3" placeholder="Ucapan atau doa (opsional)"></textarea>
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
+
+  <!-- Closing section with bottom-left ornament -->
+  <section class="section" style="padding-top:40px;">
+    <div class="closing">
+      <svg class="ornament orn-bottom" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="none" stroke="#d4b47f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 100 C60 30, 140 30, 180 100" opacity="0.95"/>
+          <path d="M40 90 C60 70, 80 70, 100 90" opacity="0.9"/>
+          <path d="M120 80 C140 60, 160 60, 170 80" opacity="0.9"/>
+        </g>
+      </svg>
+
+      <h2>Terima Kasih</h2>
+      <p>Dengan cinta dan rasa syukur, kami mengucapkan terima kasih atas doa, restu, dan ucapan hangat dari Bapak/Ibu/Saudara/i.</p>
+      <p>Semoga kebahagiaan dan keberkahan selalu menyertai kita semua. Sampai jumpa di hari bahagia kami.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Edo & Dini | Undangan Lamaran — Dengan cinta & doa 💛
+  </footer>
+
+  <script>
+    // Countdown timer
+    const eventDate = new Date('Dec 28, 2025 00:00:00').getTime();
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const diff = eventDate - now;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diff % (1000 * 60)) / 1000);
+      document.getElementById('countdown').innerHTML = `${days} Hari ${hours} Jam ${mins} Menit ${secs} Detik`;
+      if (diff < 0) {
+        clearInterval(timer);
+        document.getElementById('countdown').innerHTML = 'Hari Lamaran Telah Tiba 💛';
+      }
+    }, 1000);
+
+    // Opening screen logic
+    const openBtn = document.getElementById('openBtn');
+    const opening = document.getElementById('opening');
+    const music = document.getElementById('bgmusic');
+    openBtn.addEventListener('click', () => {
+      opening.style.opacity = '0';
+      setTimeout(() => { opening.style.display = 'none'; }, 1000);
+      if (music) music.play();
+    });
+
+    // Generate falling petals
+    function createPetal() {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = 5 + Math.random() * 6 + 's';
+      const size = 8 + Math.random() * 14;
+      petal.style.width = size + 'px';
+      petal.style.height = size + 'px';
+      petal.style.opacity = 0.7 + Math.random() * 0.25;
+      document.getElementById('opening').appendChild(petal);
+      setTimeout(() => { petal.remove(); }, 11000);
+    }
+    const petalInterval = setInterval(createPetal, 320);
+
+    // Stop petals when opening closed
+    openBtn.addEventListener('click', () => { clearInterval(petalInterval); });
+
+  </script>
+</body>
+</html>
